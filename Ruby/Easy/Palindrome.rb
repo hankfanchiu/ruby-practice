@@ -7,7 +7,7 @@
 
 def Palindrome(str)
 
-  str.gsub(" ","") == str.gsub(" ","").reverse ? true : false
+  return str.gsub!(" ","") == str.reverse
 
 end
    
