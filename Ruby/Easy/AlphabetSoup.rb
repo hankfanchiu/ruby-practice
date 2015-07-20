@@ -7,7 +7,7 @@
 
 def AlphabetSoup(str)
 
-  return str.split("").sort.join("")
+  return str.chars.sort.join
 
 end
    
