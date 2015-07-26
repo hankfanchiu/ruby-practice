@@ -16,8 +16,8 @@ def ArithGeo(arr)
   
   i = 1
   while i < arr.length
-    arith = false if (arr[i] - arr[i-1]) != (arr[1] - arr[0])
-    geo = false if (arr[i] / arr[i-1]) != (arr[1] / arr[0])
+    arith = false if (arr[i] - arr[i - 1]) != (arr[1] - arr[0])
+    geo = false if (arr[i] / arr[i- 1]) != (arr[1] / arr[0])
     i += 1
   end
   
