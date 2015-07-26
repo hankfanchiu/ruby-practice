@@ -11,27 +11,19 @@
 
 def ArithGeo(arr)
   
-  arithmetic = true
-  geometric = true
+  arith = true
+  geo = true
   
-  diff = arr[1] - arr[0]
-  ratio = arr[1] / arr[0]
-  
-  i = 0
-  
+  i = 1
   while i < arr.length
-    if arr[i + 1] - arr[i] != diff
-      arithmetic = false
-    end
-    if arr[i + 1] / arr[i] != ratio
-      geometric = false
-    end
+    arith = false if (arr[i] - arr[i-1]) != (arr[1] - arr[0])
+    geo = false if (arr[i] / arr[i-1]) != (arr[1] / arr[0])
     i += 1
   end
   
-  return "Arithmetic" if arithmetic
-  return "Geometric" if geometric
-  -1
+  return "Arithmetic" if arith
+  return "Geometric" if geo
+  return "-1"
 
 end
 
