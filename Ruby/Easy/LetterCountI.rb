@@ -5,13 +5,15 @@
 
 # Use the Parameter Testing feature in the box below to test your code with different arguments.
 
+# This first method returns the word with the highest number of instances of repeating letters:
+# For example, if "aaa bbcc" was the input, the return would be "bbcc". This is because there are
+# four non-unique letters in "bbcc", whereas there are three non-unique letters in "aaa".
 def LetterCountI(str)
-
   greatest = ""
   most_repeats = 0
   
   str.split.each do |word|
-    repeats = word.length - word.split("").uniq.length
+    repeats = word.size - word.chars.uniq.size
     if repeats > most_repeats
       most_repeats = repeats
       greatest = word
@@ -23,7 +25,21 @@ def LetterCountI(str)
   else
     return greatest
   end
+end
 
+# This second method correctly identifies the word with highest frequency of repeating letters:
+# For example, if "aaa bbcc" was the input, the return would be "aaa".
+def LetterCountII(str) 
+  words = str.scan(/\w+/)
+    
+  arr = words.map do |word|
+      word.count (
+          word.split(//).max_by { |letter| word.count(letter) }
+      )
+  end
+    
+  return -1 if arr.max == 1
+  return words[arr.index(arr.max)]
 end
 
 # keep this function call here 
