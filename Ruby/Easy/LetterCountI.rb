@@ -27,7 +27,7 @@ def LetterCountI(str)
   end
 end
 
-# This second method correctly identifies the word with highest frequency of repeating letters:
+# This second method correctly identifies the word with highest number of repeating letters:
 # For example, if "aaa bbcc" was the input, the return would be "aaa".
 def LetterCountII(str) 
   words = str.scan(/\w+/)
