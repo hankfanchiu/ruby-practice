@@ -38,8 +38,7 @@ def LetterCountII(str)
       )
   end
     
-  return -1 if arr.max == 1
-  return words[arr.index(arr.max)]
+  arr.max == 1 ? -1 : words[arr.index(arr.max)]
 end
 
 # keep this function call here 
