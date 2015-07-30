@@ -31,23 +31,25 @@ end
 # For example, if "aaa bbcc" was the input, the return would be "aaa".
 def LetterCountII(str) 
   words = str.scan(/\w+/)
+  answer = nil
+  max = 1
     
   the_word = words.max_by do |word|
     # Word must have at least 1 character,
-    # so default max is 1
-    max = 1 
+    # so default max count is 1
+    max_count = 1 
     
     word.chars.each do |char|
       # Only count each character once
       count = word.count(char)
       # Save only the value we care about
-      max = count unless count <= max
+      max_count = count unless count <= max_count
     end
     
-    max
+    answer = word if max_count > max
   end
   
-  the_word
+  answer
 
 end
 
