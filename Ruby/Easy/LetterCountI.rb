@@ -32,26 +32,23 @@ end
 def LetterCountII(str) 
   words = str.scan(/\w+/)
     
-  letter_counts = words.map do |word|
-      # Word must have at least 1 character,
-      # so default max is 1
-      max = 1 
-      
-      word.split(//).each do |character|
-          # Only count each character once
-          count = word.count(character)
-          
-          # Save only the value we care about
-          max = count unless count <= max
-      end
-      max
+  the_word = words.max_by do |word|
+    # Word must have at least 1 character,
+    # so default max is 1
+    max = 1 
+    
+    word.chars.each do |char|
+      # Only count each character once
+      count = word.count(char)
+      # Save only the value we care about
+      max = count unless count <= max
+    end
+    
+    max
   end
   
-  if letter_counts.max == 1
-      -1
-  else
-      words[letter_counts.index(letter_counts.max)]
-  end
+  the_word
+
 end
 
 # keep this function call here 
