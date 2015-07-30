@@ -27,11 +27,27 @@ def LetterCountI(str)
   end
 end
 
+# keep this function call here 
+# to see how to enter arguments in Ruby scroll down   
+LetterCountI(STDIN.gets)  
+
 # This second method correctly identifies the word with highest number of repeating letters:
 # For example, if "aaa bbcc" was the input, the return would be "aaa".
 def LetterCountII(str) 
   words = str.scan(/\w+/)
-  # When there is no word with repeated letters, the default answer is -1.
+  arr = words.map do |word|
+    word.count (
+      word.split(//).max_by { |letter| word.count(letter) }
+    )
+  end
+  return -1 if arr.max == 1
+  return words[arr.index(arr.max)]
+end
+
+
+# Revised and final solution:
+def LetterCountIII(str) 
+  words = str.scan(/\w+/)
   answer = -1
   
   # Word must have at least 1 character, so default max count is 1.
@@ -49,11 +65,5 @@ def LetterCountII(str)
       end
     end
   end
-  
   answer
-
 end
-
-# keep this function call here 
-# to see how to enter arguments in Ruby scroll down   
-LetterCountI(STDIN.gets)   
