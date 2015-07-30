@@ -31,22 +31,23 @@ end
 # For example, if "aaa bbcc" was the input, the return would be "aaa".
 def LetterCountII(str) 
   words = str.scan(/\w+/)
-  # Default answer is -1 for when there is no word with repeated letters
+  # When there is no word with repeated letters, the default answer is -1.
   answer = -1
   
+  # Word must have at least 1 character, so default max count is 1.
+  max = 1
+  
   words.each do |word|
-    # Word must have at least 1 character, so default max count is 1
-    max = 1
-    
     word.chars.each do |char|
       # Only count each character once
       count = word.count(char)
-      # Save only the value we care about
-      max = count unless count <= max
-
+      
+      # Only save the count we care about, and update the answer with newest max count word
+      if count > max
+        max = count
+        answer = word
+      end
     end
-    # Save only the word we care about
-    answer = word if max > 1
   end
   
   answer
