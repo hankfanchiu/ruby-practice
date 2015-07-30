@@ -34,7 +34,7 @@ def LetterCountII(str)
   answer = nil
   max = 1
     
-  the_word = words.max_by do |word|
+  words.each do |word|
     # Word must have at least 1 character,
     # so default max count is 1
     max_count = 1 
