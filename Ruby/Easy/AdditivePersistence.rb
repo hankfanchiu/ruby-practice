@@ -10,7 +10,7 @@ def AdditivePersistence(num)
 
   counter = 0
   until num.to_s.size == 1
-    # Replace the paramater with sum of its digits
+    # Replace the parameter with sum of its digits
     num = num.to_s.chars.map(&:to_i).reduce(:+)
     
     counter += 1
