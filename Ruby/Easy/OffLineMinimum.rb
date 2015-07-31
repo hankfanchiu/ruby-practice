@@ -30,8 +30,29 @@ def OffLineMinimum(strArr)
     
     # Remove minimum element from temporary and original arrays for next iteration.
     strArr.slice!(strArr.index(min))
-    tempArr.slice!(tempArr.index(min))
+    tempArr = []
   end
   
   return subsetArr.join(',')
+end
+
+# Revised version that does not loop:
+def OffLineMinimumII(strArr)
+
+  integers = []
+  results = []
+  
+  strArr.each do |element|
+    if element != 'E'
+      # Append all elements before first instance of 'E' to temporary array for sorting.
+      integers << element
+    else
+      # Append minimum element from temporary array to results.
+      results << integers.min
+      # Remove minimum element from temporary array for next instance of 'E'.
+      integers.slice!(integers.index(integers.min))
+    end
+  end
+  
+  return results.join(',')
 end
