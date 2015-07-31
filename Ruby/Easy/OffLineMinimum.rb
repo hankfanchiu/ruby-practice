@@ -36,6 +36,10 @@ def OffLineMinimum(strArr)
   return subsetArr.join(',')
 end
 
+# keep this function call here 
+# to see how to enter arguments in Ruby scroll down   
+OffLineMinimum(STDIN.gets)
+
 # Revised version that does not loop:
 def OffLineMinimumII(strArr)
 
