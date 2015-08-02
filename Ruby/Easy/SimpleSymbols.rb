@@ -4,16 +4,13 @@
 # The str parameter will be composed of + and = symbols with several letters between them (ie. ++d+===+c++==a)
 # and for the string to be true each letter must be surrounded by a + symbol.
 
-#So the string to the left would be false. The string will not be empty and will have at least one letter. 
-
-#Use the Parameter Testing feature in the box below to test your code with different arguments.
+# So the string to the left would be false. The string will not be empty and will have at least one letter. 
 
 def SimpleSymbols(str)
 
-  return str.match(/\+\w\+[\w\+]*/) != nil
-  
+  if str.match(/\+\w\+[\w\+]*/) != nil
+    return true
+  else
+    return false
+  end
 end
-   
-# keep this function call here 
-# to see how to enter arguments in Ruby scroll down   
-SimpleSymbols(STDIN.gets)  
