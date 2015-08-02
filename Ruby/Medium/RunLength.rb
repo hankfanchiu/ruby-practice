@@ -6,8 +6,6 @@
 # For example: "wwwggopp" would return 3w2g1o2p.
 # The string will not contain any numbers, punctuation, or symbols. 
 
-# Use the Parameter Testing feature in the box below to test your code with different arguments.
-
 def RunLength(str)
   
   temp = []
@@ -28,11 +26,8 @@ def RunLength(str)
     
   return results.join
 end
- 
-# keep this function call here 
-# to see how to enter arguments in Ruby scroll down   
-RunLength(STDIN.gets)
 
+# Second method without utilizing a loop:
 def RunLengthII(str)
 
   temp = []
