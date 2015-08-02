@@ -12,9 +12,7 @@ def PrimeMover(num)
       primes << n
     end
     
-    if primes.count == num
-      break
-    end
+    break if primes.count == num
   end
   
   return primes[num - 1]
