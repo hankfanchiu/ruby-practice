@@ -4,8 +4,6 @@
 # For example: if num is 2718 then your program should return 2 because
 # 2 + 7 + 1 + 8 = 18 and 1 + 8 = 9 and you stop at 9. 
 
-# Use the Parameter Testing feature in the box below to test your code with different arguments.
-
 def AdditivePersistence(num)
 
   counter = 0
@@ -18,7 +16,3 @@ def AdditivePersistence(num)
   
   return counter
 end
-
-# keep this function call here 
-# to see how to enter arguments in Ruby scroll down   
-AdditivePersistence(STDIN.gets) 
