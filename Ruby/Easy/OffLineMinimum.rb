@@ -6,8 +6,6 @@
 # When finished, your program should return that new set with integers separated by commas.
 # For example: if strArr is ["5","4","6","E","1","7","E","E","3","2"] then your program should return 4,1,5. 
 
-# Use the Parameter Testing feature in the box below to test your code with different arguments.
-
 def OffLineMinimum(strArr)
 
   tempArr = []
@@ -36,9 +34,6 @@ def OffLineMinimum(strArr)
   return subsetArr.join(',')
 end
 
-# keep this function call here 
-# to see how to enter arguments in Ruby scroll down   
-OffLineMinimum(STDIN.gets)
 
 # Revised version that does not loop:
 def OffLineMinimumII(strArr)
