@@ -7,7 +7,7 @@
 def PrimeTime(num)
 
   i = 2
-  while i > 1 && i ** 2 < num
+  while i ** 2 <= num
     if num % i == 0
       return false
     end
