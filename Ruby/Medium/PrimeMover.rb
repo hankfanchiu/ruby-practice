@@ -5,24 +5,30 @@
 
 def PrimeMover(num)
   
-  primes = []
+  prime = 2
+  counter = 0
   
-  for n in 2..10 ** 4
-    if IsPrime(n)
-      primes << n
+  for n in 1..10 ** 4
+    if prime?(n)
+      prime = n
+      counter += 1
     end
     
-    break if primes.count == num
+    if num == counter
+      return prime
+    end
   end
-  
-  return primes[num - 1]
 end
 
-
-def IsPrime(num)
+# Standalone method to check if a number is a prime number.
+def prime?(n)
   
-  for i in 2..Math.sqrt(num)
-    if num % i == 0
+  if n < 2
+    return false
+  end
+  
+  for i in 2..Math.sqrt(n)
+    if n % i == 0
       return false
     end
   end
