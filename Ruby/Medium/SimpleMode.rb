@@ -17,5 +17,4 @@ def SimpleMode(arr)
   arr.each { |number| counts[number] += 1 }
   
   return arr.max_by { |n| counts[n] }
-  
 end
