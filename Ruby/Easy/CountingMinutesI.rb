@@ -6,8 +6,6 @@
 # For example: if str is 9:00am-10:00am then the output should be 60.
 # If str is 1:00pm-11:00am the output should be 1320. 
 
-# Use the Parameter Testing feature in the box below to test your code with different arguments.
-
 def CountingMinutesI(str)
 
   # Parsing the components of the start time string
