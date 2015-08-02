@@ -15,11 +15,11 @@ def RunLength(str)
     
   i = 0
   while i < str.chars.count
-    temp << str.chars[i]
+    temp << str[i]
 
-    if str.chars[i + 1] != str.chars[i]
+    if str[i + 1] != str[i]
       results << temp.count
-      results << str.chars[i]
+      results << str[i]
       temp.clear
     end
     
@@ -41,7 +41,7 @@ def RunLengthII(str)
   str.chars.each_with_index do |element, index|
     temp << element
     
-    if str.chars[index + 1] != str.chars[index]
+    if str[index + 1] != str[index]
       results << temp.count
       results << element
       temp.clear
