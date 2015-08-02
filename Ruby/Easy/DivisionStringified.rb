@@ -13,8 +13,8 @@ def DivisionStringified(num1,num2)
   split = quotient.reverse.chars
   
   # Join array above into number string with commas
-  joined = split.each_slice(3).map(&:join).join(',').reverse
+  joined = split.each_slice(3).map(&:join).join(',')
   
-  return joined
+  return joined.reverse
 
 end
