@@ -29,9 +29,8 @@ end
 
 # Smarter, more efficient method that utilizes the given array's range:
 def Consecutive(arr)
+
+  range = Array(arr.min..arr.max)
   
-  # Subtracting the range of the arr by the arr returns all of the missing consecutive numbers.
-  missing_numbers = Array(arr.min..arr.max) - arr
-  
-  return missing_numbers.count
+  return range.count - arr.count
 end
