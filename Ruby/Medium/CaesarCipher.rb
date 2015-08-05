@@ -16,10 +16,9 @@ def CaesarCipher(str,num)
   
   cipher = downcase.merge(upcase)
 
-  answer = str.chars
-  answer.map! do |char|
+  answer = str.chars.map do |char|
     if char =~ /[[:alpha:]]/
-      cipher.fetch(char)
+      cipher[char]
     else
       char
     end
