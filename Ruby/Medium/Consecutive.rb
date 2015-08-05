@@ -18,8 +18,8 @@ def Consecutive(arr)
       while consecutive != arr.sort[i] - 1
         consecutive += 1
         counter += 1
-    	end
-	  end
+      end
+    end
     i += 1
   end
 
