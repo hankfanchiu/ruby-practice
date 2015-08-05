@@ -25,6 +25,10 @@ def CaesarCipher(str,num)
     end
   end
   
+  return answer.join
+end
+
+  
 # Solution accepted by Coderbyte's Ruby interpreter, because:
 # - #rotate returns NoMethodError
 # - Multi-line block for #map is not recognized
@@ -53,8 +57,5 @@ def CaesarCipher(str,num)
     end
   end
   
-  return answer.join
-end
-
   return answer.join
 end
