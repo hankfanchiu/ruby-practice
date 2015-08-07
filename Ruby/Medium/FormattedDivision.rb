@@ -16,7 +16,7 @@ def FormattedDivision(num1, num2)
   answer = Array.new
   answer << quo.shift(5)
   
-  # Join reversed integer places with commas every three places
+  # Join reversed integer places with commas for every three places.
   answer << quo.each_slice(3).map(&:join).join(',')
   
   return answer.join.reverse
