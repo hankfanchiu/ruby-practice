@@ -12,13 +12,15 @@ def DashInsertII(num)
   arr.each_with_index do |n, i|
     answer << n
     
-    if (n.to_i != 0) && (arr[i + 1].to_i != 0)
-      # Between two odd numbers:
-      if (n.to_i % 2 != 0) && (arr[i + 1].to_i % 2 != 0)
+    # For non-zeros:
+    if n.to_i != 0 && arr[i + 1].to_i != 0
+      
+      # Insert '-' between two odd numbers.
+      if n.to_i.odd? && arr[i + 1].to_i.odd?
         answer << '-'
         
-      # Between two even numbers:
-      elsif (n.to_i % 2 == 0) && (arr[i + 1].to_i % 2 == 0)
+      # Insert '*' between two even numbers.
+      elsif n.to_i.even? && arr[i + 1].to_i.even?
         answer << '*'
       end
     end
