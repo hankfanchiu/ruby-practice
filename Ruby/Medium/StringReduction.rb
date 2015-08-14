@@ -15,6 +15,8 @@
 # If str is "bcab", "bc" reduces to "a", so you have "aab", then "ab" reduces to "c",
 # and the final string "ac" is reduced to "b" so the output should be 1. 
 
+
+# Benchmark for this method at 10,000 times measures to be ~3.13 seconds.
 def StringReduction(str)
 
   hash_f = {"a" => "b", "b" => "c", "c" => "a"}
@@ -45,6 +47,7 @@ def StringReduction(str)
 end
 
 
+# Benchmark for this method at 10,000 times measures to be ~2.52 seconds.
 def StringReduction2(str)
     
   until str.split('').uniq.size == 1
@@ -57,6 +60,7 @@ def StringReduction2(str)
 end
 
 
+# Benchmark for this method at 10,000 times measures to be ~2.24 seconds.
 def StringReduction3(str)
 
   arr = str.split('')
