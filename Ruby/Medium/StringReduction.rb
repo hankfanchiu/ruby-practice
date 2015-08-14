@@ -62,16 +62,16 @@ def StringReduction3(str)
   arr = str.split('')
   
   until arr.uniq.length == 1
-    arr.each_with_index do |x, i|
+    arr.each_with_index do |char, i|
       if arr[i] == arr[i + 1]
         next
-      elsif arr[i] =~ /[ac]/ && arr[i+1] =~ /[ac]/
+      elsif arr[i] =~ /[ac]/ && arr[i + 1] =~ /[ac]/
         arr[i] = "b"
         arr.delete_at(i + 1)
-      elsif arr[i] =~ /[cb]/ && arr[i+1] =~ /[cb]/
+      elsif arr[i] =~ /[cb]/ && arr[i + 1] =~ /[cb]/
         arr[i] = "a"
         arr.delete_at(i + 1)
-      elsif arr[i] =~ /[ab]/ && arr[i+1] =~ /[ab]/
+      elsif arr[i] =~ /[ab]/ && arr[i + 1] =~ /[ab]/
         arr[i] = "c"
         arr.delete_at(i + 1)
       end
