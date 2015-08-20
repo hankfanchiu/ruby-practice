@@ -10,31 +10,29 @@
 
 def MultipleBrackets(str)
 
-  unaccounted_p = 0
-  unaccounted_b = 0
-  pair = 0
+  lone_paren = 0
+  lone_brack = 0
+  pair_count = 0
   
   str.each_char do |char|
+    # Identify and count parentheses.
     if char == "("
-      unaccounted_p += 1
+      lone_paren += 1
     elsif char == ")"
-      return 0 if unaccounted_p == 0
-      unaccounted_p -= 1
-      pair += 1
+      return 0 if lone_paren == 0
+      lone_paren -= 1
+      pair_count += 1
     end
     
+    # Identify and count brackets.
     if char == "["
-      unaccounted_b += 1
+      lone_brack += 1
     elsif char == "]"
-      return 0 if unaccounted_b == 0
-      unaccounted_b -= 1
-      pair += 1
+      return 0 if lone_brack == 0
+      lone_brack -= 1
+      pair_count += 1
     end
   end
   
-  if unaccounted_p == 0 && unaccounted_b == 0
-    return "1 #{pair}"
-  else
-    return 0
-  end    
+  lone_paren == 0 && lone_brack == 0 ? "1 #{pair_count}" : "0"    
 end
