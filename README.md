@@ -1,2 +1,4 @@
 # Coderbyte
-These are the solutions to the challenges on http://coderbyte.com/, by t5um3.
+Hank Fanchiu's solutions to the challenges on http://coderbyte.com/ in Ruby.
+
+Challenges and solutions are separated by difficulty.
