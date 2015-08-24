@@ -1,35 +1,31 @@
+# Using the Ruby language, have the function MostFreeTime(strArr)
+# read the strArr parameter being passed which will represent a full day
+# and will be filled with events that span from time X to time Y in the day.
+#
+# The format of each event will be hh:mmAM/PM-hh:mmAM/PM.
+#
+# For example,
+# strArr may be ["10:00AM-12:30PM","02:00PM-02:45PM","09:10AM-09:50AM"].
+#
+# Your program will have to output the longest amount of free time available
+# between the start of your first event and the end of your last event
+# in the format: hh:mm.
+#
+# The start event should be the earliest event in the day and
+# the latest event should be the latest event in the day.
+# The output for the previous input would therefore be 01:30
+# (with the earliest event in the day starting at 09:10AM
+# and the latest event ending at 02:45PM).
+#
+# The input will contain at least 3 events and the events may be out of order.
+
 def MostFreeTime(strArr)
-
+  # Append the start time and end time of each event, in minutes, to new array.
   converted = Array.new
-
-  strArr.each do |event|
-    # Parse the hour, minute, and AM/PM of the event start time.
-    hour1 = event.scan(/\d+/)[0].to_i
-    min1 = event.scan(/\d+/)[1].to_i
-    am_pm1 = event.downcase.scan(/.\m/)[0]
-
-    # Convert event start time to minutes.
-    time1 = (hour1 * 60) + min1
-    time1 += (12 * 60) if am_pm1 == "pm" && hour1 != 12
-
-    # Parse the hour, minute, and AM/PM of the event end time.
-    hour2 = event.scan(/\d+/)[2].to_i
-    min2 = event.scan(/\d+/)[3].to_i
-    am_pm2 = event.downcase.scan(/.\m/)[1]
-
-    # Convert event end time to minutes.
-    time2 = (hour2 * 60) + min2
-    time2 += (12 * 60) if am_pm2 == "pm" && hour2 != 12
-
-    # Append start time and end time to a subarray.
-    event_time = Array.new
-    event_time += [time1, time2]
-
-    converted << event_time
-  end
+  strArr.each { |event| converted << times_to_minutes(event) }
 
   # Determine the most free time between events.
-  converted.sort
+  converted.sort!
   most_free_time = 0
 
   i = 1
@@ -40,13 +36,30 @@ def MostFreeTime(strArr)
   end
 
   # Convert the most free time to HH:MM format.
-  free_hour = (most_free_time / 60).to_s
-  free_hour.insert(0, "0") if free_hour.length == 1
+  hour = (most_free_time / 60).to_s.rjust(2, "0")
+  min = (most_free_time % 60).to_s.rjust(2, "0")
 
-  free_min = (most_free_time % 60).to_s
-  free_min.insert(0, "0") if free_min.length == 1
-
-  return "#{free_hour}:#{free_min}"
+  return "#{hour}:#{min}"
 end
 
-puts MostFreeTime(["10:00AM-12:30PM","02:00PM-02:45PM","09:10AM-09:50AM"])
+def times_to_minutes(str)
+  # Parse the start time of the event and convert to minutes.
+  hour1 = str[0, 2].to_i
+  min1 = str[3, 2].to_i
+  am_pm1 = str[5, 2]
+
+  time1 = (hour1 * 60) + min1
+  time1 += (12 * 60) if am_pm1 == "PM" && hour1 != 12
+
+  # Parse the end time of the event and convert to minutes.
+  hour2 = str[8, 2].to_i
+  min2 = str[11, 2].to_i
+  am_pm2 = str[13, 2]
+
+  time2 = (hour2 * 60) + min2
+  time2 += (12 * 60) if am_pm2 == "PM" && hour2 != 12
+
+  return [time1, time2]
+end
+
+puts MostFreeTime(["12:15PM-02:00PM","09:00AM-12:11PM","02:02PM-04:00PM"])
