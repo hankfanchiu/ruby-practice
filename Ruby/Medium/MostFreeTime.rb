@@ -20,6 +20,7 @@
 # The input will contain at least 3 events and the events may be out of order.
 
 def MostFreeTime(strArr)
+
   # Append the start time and end time of each event, in minutes, to new array.
   converted = Array.new
   strArr.each { |event| converted << times_to_minutes(event) }
@@ -42,7 +43,9 @@ def MostFreeTime(strArr)
   return "#{hour}:#{min}"
 end
 
+
 def times_to_minutes(str)
+
   # Parse the start time of the event and convert to minutes.
   hour1 = str[0, 2].to_i
   min1 = str[3, 2].to_i
@@ -63,3 +66,4 @@ def times_to_minutes(str)
 end
 
 puts MostFreeTime(["12:15PM-02:00PM","09:00AM-12:11PM","02:02PM-04:00PM"])
+# => 00:04
