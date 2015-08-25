@@ -6,9 +6,15 @@
 
 def DistinctList(arr)
 
+  numbers = {}
   duplicates = 0
-  arr.sort!.each_with_index do |n, i|
-    duplicates += 1 if n == arr[i + 1]
+
+  arr.each do |num|
+    if numbers[num]
+      duplicates += 1
+    else
+      numbers[num] = true
+    end
   end
 
   return duplicates
