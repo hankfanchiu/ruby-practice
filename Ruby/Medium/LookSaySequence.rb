@@ -12,10 +12,10 @@
 
 def LookSaySequence(num)
 
-  digits = num.to_s.split('')
-  answer = Array.new
+  answer = []
   counter = 1
 
+  digits = num.to_s.split('')
   digits.each_with_index do |n, i|
     if n == digits[i + 1]
       counter += 1
