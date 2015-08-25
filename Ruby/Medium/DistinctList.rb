@@ -25,3 +25,8 @@ puts DistinctList([0,-2,-2,5,5,5])
 
 puts DistinctList([100,2,101,4])
 # => 0
+
+def DistinctList(arr)
+
+  arr.size - arr.uniq.size
+end
