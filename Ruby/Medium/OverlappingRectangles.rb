@@ -20,9 +20,9 @@
 def OverlappingRectangles(strArr)
 
   # Parse the input string into arrays of coordinates for two rectangles:
-  n = strArr.scan(/-?\d+/).map(&:to_i)
-  r1 = [[n[0], n[1]], [n[2], n[3]], [n[4], n[5]], [n[6], n[7]]]
-  r2 = [[n[8], n[9]], [n[10], n[11]], [n[12], n[13]], [n[14], n[15]]]
+  n = strArr.to_s.scan(/-?\d+/).map(&:to_i)
+  r1 = n[0..7].each_slice(2).to_a
+  r2 = n[8..15].each_slice(2).to_a
 
   # Area of overlap:
   x_range = overlap(r1, r2, 0)
@@ -55,4 +55,4 @@ def overlap(r1, r2, i)
   return [left_or_bot.max[i], right_or_top.max[i]].min - right_or_top.min[i]
 end
 
-puts OverlappingRectangles("(0,0),(0,-2),(3,0),(3,-2),(2,-1),(3,-1),(2,3),(3,3)")
+puts OverlappingRectangles([("(0,0),(5,0),(0,2),(5,2),(3,1),(5,1),(3,-1),(5,-1)")])
