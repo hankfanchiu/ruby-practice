@@ -1,16 +1,18 @@
-# Have the function Consecutive(arr) take the array of integers stored in arr and return the minimum number
-# of integers needed to make the contents of arr consecutive from the lowest number to the highest number.
-
-# For example: If arr contains [4, 8, 6] then the output should be 2 because two numbers need to be added
-# to the array (5 and 7) to make it a consecutive array of numbers from 4 to 8.
-
-# Negative numbers may be entered as parameters and no array will have less than 2 elements. 
+# Have the function Consecutive(arr) take the array of integers stored in arr
+# and return the minimum number of integers needed to make the contents of arr
+# consecutive from the lowest number to the highest number.
+#
+# For example: If arr contains [4, 8, 6] then the output should be 2
+# because two numbers need to be added to the array (5 and 7)
+# to make it a consecutive array of numbers from 4 to 8.
+#
+# Negative numbers may be entered as parameters and no array will have less than 2 elements.
 
 # Brute-force, ineffecient method that does not take into account of the range of the number array:
 def Consecutive(arr)
 
   counter = 0
-  
+
   i = 1
   while i < arr.length
     consecutive = arr.sort[i - 1]
@@ -31,6 +33,6 @@ end
 def Consecutive(arr)
 
   range = Array(arr.min..arr.max)
-  
+
   return range.count - arr.count
 end

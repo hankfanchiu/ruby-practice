@@ -1,7 +1,9 @@
 # Have the function FibonacciChecker(num) return the string yes,
 # if the number given is part of the Fibonacci sequence.
-
-# This sequence is defined by: Fn = Fn-1 + Fn-2, which means to find Fn you add the previous two numbers up.
+#
+# This sequence is defined by: Fn = Fn-1 + Fn-2,
+# which means to find Fn you add the previous two numbers up.
+#
 # The first two numbers are 0 and 1, then comes 1, 2, 3, 5 etc.
 # If num is not in the Fibonacci sequence, return the string no.
 
@@ -13,12 +15,12 @@ def FibonacciChecker(num)
     return "yes"
   else
     return "no"
-  end         
+  end
 end
 
 def is_square?(num)
-  
+
   square_root = Math.sqrt(num).to_i
-  
+
   return square_root ** 2 == num
 end
