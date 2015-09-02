@@ -1,7 +1,5 @@
 # Essentials
 
-## Basics
-
 ### What is a class?
 
 A class is a **blueprint** that holds **data**,
