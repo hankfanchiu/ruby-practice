@@ -1,5 +1,9 @@
 # Essentials
 
+According to Ryan Sobol's [15 Questions to Ask During a Ruby Interview]
+(https://gist.github.com/ryansobol/5252653) Gist, the following concepts are
+generally expected of junior programmers, and definitely of senior programmers.
+
 ### What is a class?
 
 A class is a **blueprint** that holds **data**,

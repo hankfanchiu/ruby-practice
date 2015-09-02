@@ -1,5 +1,9 @@
 # Good To Know's
 
+According to Ryan Sobol's [15 Questions to Ask During a Ruby Interview]
+(https://gist.github.com/ryansobol/5252653) Gist, the following concepts are
+generally expected of senior programmers.
+
 ### a ||= b
 
 a == b only when a == false

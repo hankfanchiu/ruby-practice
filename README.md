@@ -10,5 +10,7 @@ provided by App Academy.
 
 There are also notes that I took when learning about Ruby gotchas:
 
-* [Essentials](/ruby/essentials.md)
-* [Good To Know's](/ruby/good_to_know.md)
+* [Essentials](/ruby/essentials.md): Senior programmers won't have a problem
+with these, while junior programmers will usually give only half-answers.
+* [Good To Know's](/ruby/good_to_know.md): Separating the professional
+from the hobbyist
