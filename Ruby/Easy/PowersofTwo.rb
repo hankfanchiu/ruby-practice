@@ -24,3 +24,26 @@ def PowersofTwo(num)
   end
   return false
 end
+
+
+# App Academy prep-work:
+def is_power_of_two?(num)
+
+  return false if num < 0
+
+  i = 0
+  while 2 ** i < num
+    return true if 2 ** i == num
+    i += 1
+  end
+
+  return false
+end
+
+
+# Test cases:
+puts('is_power_of_two?(1) == true: ' + (is_power_of_two?(1) == true).to_s)
+puts('is_power_of_two?(16) == true: ' + (is_power_of_two?(16) == true).to_s)
+puts('is_power_of_two?(64) == true: ' + (is_power_of_two?(64) == true).to_s)
+puts('is_power_of_two?(78) == false: ' + (is_power_of_two?(78) == false).to_s)
+puts('is_power_of_two?(0) == false: ' + (is_power_of_two?(0) == false).to_s)
