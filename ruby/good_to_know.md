@@ -2,23 +2,24 @@
 
 ### a ||= b
 
-    # a == b only when a == false
+```ruby
+# a == b only when a == false
+```
 
+```ruby
+a = 0, b = true
+a ||= b #=> a = 0
+```
 
-    a = 0, b = true
+```ruby
+a = false, b = true
+a ||= b #=> a = true
+```
 
-    a ||= b #=> a = 0
-
-
-    a = false, b = true
-
-    a ||= b #=> a = true
-
-
-    a = nil, b = true
-
-    a ||= b #=> a = true
-
+```ruby
+a = nil, b = true
+a ||= b #=> a = true
+```
 
 ### Three ways to invoke a method in Ruby:
 
@@ -28,8 +29,8 @@
 
 3. **Object#method(:foo).call**
 
-    Object.object_id
-
-    Object.send(:object_id)
-
-    Object.method(:object_id).call
+```ruby
+Object.object_id
+Object.send(:object_id)
+Object.method(:object_id).call
+```
