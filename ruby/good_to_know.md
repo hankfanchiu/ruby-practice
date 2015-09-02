@@ -2,9 +2,7 @@
 
 ### a ||= b
 
-```ruby
-# a == b only when a == false
-```
+a == b only when a == false
 
 ```ruby
 a = 0, b = true
@@ -24,9 +22,7 @@ a ||= b #=> a = true
 ### Three ways to invoke a method in Ruby:
 
 1. **dot operator** (aka **period operator**)
-
 2. **Object#send**
-
 3. **Object#method(:foo).call**
 
 ```ruby
