@@ -17,3 +17,35 @@ def ExOh(str)
   end
 
 end
+
+
+def ExOh_2(str)
+
+  x_count = 0
+  o_count = 0
+
+  i = 0
+  while i < str.length
+    if str[i] == "x"
+      x_count += 1
+    elsif str[i] == "o"
+      o_count += 1
+    end
+
+    i += 1
+  end
+
+  if x_count == o_count
+    return true
+  else
+    return false
+  end
+end
+
+
+# Test cases:
+puts ExOh("xooxxxxooxo") #=> false
+puts ExOh("xooxxxxooo") #=> true
+
+puts ExOh_2("xooxxxxooxo") #=> false
+puts ExOh_2("xooxxxxooo") #=> true

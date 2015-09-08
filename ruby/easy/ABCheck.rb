@@ -9,6 +9,34 @@
 
 def ABCheck(str)
 
-  str =~ (/[a]...[b]/) ? true : false
-
+  if str =~ (/[a]...[b]/) || str =~ (/[b]...[a]/)
+    return true
+  else
+    return false
+  end
 end
+
+
+def ABCheck_2(str)
+
+  arr = str.split('')
+  arr.each_with_index do |char, i|
+    if char == "a"
+      return true if arr[i + 4] == "b"
+    elsif char == "b"
+      return true if arr[i + 4] == "a"
+    end
+  end
+
+  return false
+end
+
+
+# Test cases:
+puts ABCheck("lane borrowed")
+puts ABCheck("abc abc aaab")
+puts ABCheck("lamb goes baaa")
+
+puts ABCheck_2("lane borrowed")
+puts ABCheck_2("abc abc aaab")
+puts ABCheck_2("lamb goes baaa")

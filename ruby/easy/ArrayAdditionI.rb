@@ -3,7 +3,7 @@
 # in the array can be added up to equal the largest number in the array,
 # otherwise return the string false.
 
-# For example: if arr contains [4, 6, 23, 10, 1, 3
+# For example: if arr contains [4, 6, 23, 10, 1, 3]
 # the output should return true because 4 + 6 + 10 + 3 = 23.
 
 # The array will not be empty, will not contain all the same elements,
@@ -19,6 +19,30 @@ def ArrayAdditionI(arr)
     i += 1
   end
 
-  false
-
+  return false
 end
+
+
+def ArrayAdditionI_2(arr)
+
+  n = 2
+  while n < arr.count
+    arr.combination(n).each do |combo|
+      if combo.inject(:+) == arr.max
+        return true
+      end
+    end
+
+    n += 1
+  end
+
+  return false
+end
+
+
+# Test cases:
+puts ArrayAdditionI([4, 6, 23, 10, 1, 3])
+puts ArrayAdditionI([2, 6, 40, 10, 1, 3])
+
+puts ArrayAdditionI_2([4, 6, 23, 10, 1, 3])
+puts ArrayAdditionI_2([2, 6, 40, 10, 1, 3])

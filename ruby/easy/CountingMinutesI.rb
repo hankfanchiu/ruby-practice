@@ -29,5 +29,34 @@ def CountingMinutesI(str)
   time2 = time2 + (24 * 60) if time2 < time1
 
   return time2 - time1
-
 end
+
+
+def CountingMinutesI_2(str)
+
+  numbers = str.scan(/\d+/)
+  am_pm = str.scan(/.\m/)
+
+  hour1 = numbers[0].to_i
+  min1 = numbers[1].to_i
+  am_pm1 = am_pm[0]
+  time1 = (hour1 * 60) + min1
+  time1 += (12 * 60) if am_pm1 == "pm"
+
+  hour2 = numbers[2].to_i
+  min2 = numbers[3].to_i
+  am_pm2 = am_pm[1]
+  time2 = (hour2 * 60) + min2
+  time2 += (12 * 60) if am_pm2 == "pm"
+  time2 += (24 * 60) if time2 < time1
+
+  return time2 - time1
+end
+
+
+# Test cases
+puts CountingMinutesI("9:00am-10:00am") #=> 60
+puts CountingMinutesI("1:00pm-11:00am") #=> 1320
+
+puts CountingMinutesI_2("9:00am-10:00am") #=> 60
+puts CountingMinutesI_2("1:00pm-11:00am") #=> 1320

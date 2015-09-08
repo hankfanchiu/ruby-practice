@@ -11,7 +11,6 @@ def DashInsert(str)
 
   i = 0
   while i < arr.length - 1
-
     # Insert dash between two odd numbers
     if arr[i].odd? && arr[i + 1].odd?
       arr.insert(i + 1, '-')
@@ -19,9 +18,32 @@ def DashInsert(str)
     else
       i += 1
     end
-
   end
 
-  arr.join
-
+  return arr.join
 end
+
+
+def DashInsert_2(str)
+
+  answer = []
+
+  arr = str.to_s.split('').map(&:to_i)
+  arr.each_with_index do |num, i|
+    answer << num
+
+    if num.odd?
+      if arr[i + 1] != nil && arr[i + 1].odd?
+        answer << "-"
+      end
+    end
+  end
+
+  return answer.join
+end
+
+
+# Test cases:
+puts DashInsert(454793)
+
+puts DashInsert_2(454793)

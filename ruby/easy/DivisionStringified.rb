@@ -19,5 +19,33 @@ def DivisionStringified(num1,num2)
   joined = split.each_slice(3).map(&:join).join(',')
 
   return joined.reverse
-
 end
+
+
+def DivisionStringified_2(num1, num2)
+
+  quotient = nil
+
+  if (num1 / num2) < 1
+    quotient = (num1 / num2.to_f).round.to_s
+  else
+    quotient = (num1 / num2).to_s
+  end
+
+  i = quotient.length - 3
+  while i > 0
+    quotient.insert(i, ",")
+
+    i -= 3
+  end
+
+  return quotient
+end
+
+
+# Test cases:
+puts DivisionStringified(2, 3)
+puts DivisionStringified(123456789, 10000)
+
+puts DivisionStringified_2(2, 3)
+puts DivisionStringified_2(123456789, 10000)

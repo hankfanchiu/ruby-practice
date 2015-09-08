@@ -1,8 +1,8 @@
 # Have the function LetterCountI(str) take the str parameter being passed
 # and return the first word with the greatest number of repeated letters.
 #
-# For example: "Today, is the greatest day ever!" should return greatest
-# because it has 2 e's (and 2 t's) and it comes before ever
+# For example: "Today, is the greatest day ever!" should return "greatest"
+# because it has 2 e's (and 2 t's) and it comes before "ever"
 # which also has 2 e's.
 #
 # If there are no words with repeating letters return -1.
@@ -16,6 +16,7 @@
 # This is because there are four non-unique letters in "bbcc",
 # whereas there are three non-unique letters in "aaa".
 def LetterCountI(str)
+
   greatest = ""
   most_repeats = 0
 
@@ -39,7 +40,8 @@ end
 # of repeating letters:
 #
 # For example, if "aaa bbcc" was the input, the return would be "aaa".
-def LetterCountII(str)
+def LetterCountI_2(str)
+
   words = str.scan(/\w+/)
   arr = words.map do |word|
     word.count (
@@ -52,11 +54,12 @@ end
 
 
 # Revised and final solution:
-def LetterCountIII(str)
+def LetterCountI_3(str)
+
   words = str.scan(/\w+/)
   answer = -1
 
-  # Word must have at least 1 character, so default max count is 1.
+  # A word must have at least 1 character, so default max count is 1.
   max = 1
 
   words.each do |word|

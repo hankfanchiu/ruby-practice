@@ -1,5 +1,5 @@
 # Have the function SimpleSymbols(str) take the str parameter being passed
-# and determine if it is an acceptable sequence #
+# and determine if it is an acceptable sequence
 # by either returning the string true or false.
 #
 # The str parameter will be composed of + and = symbols with several letters
@@ -17,3 +17,28 @@ def SimpleSymbols(str)
     return false
   end
 end
+
+
+def SimpleSymbols_2(str)
+
+  i = 0
+  while i < str.length
+    if str[i] =~ /[:alpha:]/
+      if str[i - 1] != "+" or str[i + 1] != "+"
+        return false
+      end
+    end
+
+    i += 1
+  end
+
+  return true
+end
+
+
+# Test cases:
+puts SimpleSymbols("++d+===+c++==a") #=> false
+puts SimpleSymbols("++d+===+c++==+a+") #=> true
+
+puts SimpleSymbols_2("++d+===+c++==a") #=> false
+puts SimpleSymbols_2("++d+===+c++==+a+") #=> true

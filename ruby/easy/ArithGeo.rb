@@ -31,3 +31,40 @@ def ArithGeo(arr)
   return "-1"
 
 end
+
+
+def ArithGeo_2(arr)
+
+  arith = true
+  geo = true
+
+  i = 0
+  while i < arr.length - 1
+    if arith == false && geo == false
+      return "-1"
+    end
+
+    if (arr[i + 1] - arr[i]) != (arr[1] - arr[0])
+      arith = false
+    end
+
+    if (arr[i + 1] / arr[i]) != (arr[1] / arr[0])
+      geo = false
+    end
+
+    i += 1
+  end
+
+  return "Arithmetic" if arith
+  return "Geometric" if geo
+end
+
+
+# Test cases:
+puts ArithGeo([2, 4, 6, 8])
+puts ArithGeo([2, 6, 18, 54])
+puts ArithGeo([1, 2, 3, 3, 9])
+
+puts ArithGeo_2([2, 4, 6, 8])
+puts ArithGeo_2([2, 6, 18, 54])
+puts ArithGeo_2([1, 2, 3, 3, 9])
