@@ -1,5 +1,6 @@
 # Have the function SwapII(str) take the str parameter
 # and swap the case of each character.
+#
 # Then, if a letter is between two numbers (without separation),
 # switch the places of the two numbers.
 #
@@ -10,7 +11,8 @@ def SwapII(str)
 
   answer = str.swapcase
 
-  # Scan for all substrings in which letter(s) are between two numbers (without separation).
+  # Scan for all substrings in which letter(s) are between two numbers
+  # (without separation).
   answer.scan(/\d+[[:alpha:]]+\d+/).each do |matched|
 
     # Switch the places of the two numbers, and store this substitute.

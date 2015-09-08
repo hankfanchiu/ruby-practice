@@ -18,3 +18,9 @@ def ThreeFiveMultiples(num)
 
   return n
 end
+
+
+# Test cases:
+puts ThreeFiveMultiples(10) #=> 23
+puts ThreeFiveMultiples(55) #=> 698
+

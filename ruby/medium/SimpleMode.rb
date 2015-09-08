@@ -10,12 +10,15 @@
 
 def SimpleMode(arr)
 
-  if arr = arr.uniq
-    return -1
-  end
+  return -1 if arr == arr.uniq
 
   counts = Hash.new(0)
   arr.each { |number| counts[number] += 1 }
 
   return arr.max_by { |n| counts[n] }
 end
+
+
+# Test cases:
+puts SimpleMode([10, 4, 5, 2, 4]) #=> 4
+puts SimpleMode([5, 10, 10, 6, 5]) #=> 5

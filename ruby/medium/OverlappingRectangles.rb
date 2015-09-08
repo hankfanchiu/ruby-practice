@@ -55,4 +55,7 @@ def overlap(r1, r2, i)
   return [left_or_bot.max[i], right_or_top.max[i]].min - right_or_top.min[i]
 end
 
-puts OverlappingRectangles([("(0,0),(5,0),(0,2),(5,2),(3,1),(5,1),(3,-1),(5,-1)")])
+puts OverlappingRectangles(
+  [("(0,0),(5,0),(0,2),(5,2),(3,1),(5,1),(3,-1),(5,-1)")]
+  )
+#=> 5

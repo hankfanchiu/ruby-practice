@@ -9,7 +9,7 @@
 def DashInsertII(num)
 
   arr = num.to_s.split(//)
-  answer = Array.new
+  answer = []
 
   arr.each_with_index do |n, i|
     answer << n
@@ -30,3 +30,7 @@ def DashInsertII(num)
 
   return answer.join
 end
+
+
+# Test cases:
+puts DashInsertII(4546793)

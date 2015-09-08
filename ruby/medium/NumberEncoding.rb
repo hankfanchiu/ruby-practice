@@ -13,7 +13,7 @@ def NumberEncoding(str)
 
   str.split("").each do |char|
     if char =~ /[[:alpha:]]/
-      arr << (char.downcase[0].ord - 96).to_s
+      arr << (char.downcase.ord - 96).to_s
     else
       arr << char
     end
@@ -23,8 +23,6 @@ def NumberEncoding(str)
 end
 
 
-puts NumberEncoding("jaj-a")
-# => 10110-1
-
-puts NumberEncoding("hello 45")
-# => 85121215 45
+# Test cases:
+puts NumberEncoding("jaj-a") #=> 10110-1
+puts NumberEncoding("hello 45") #=> 85121215 45

@@ -28,14 +28,12 @@ def DashInsert_2(str)
 
   answer = []
 
-  arr = str.to_s.split('').map(&:to_i)
+  arr = str.to_s.split('')
   arr.each_with_index do |num, i|
     answer << num
 
-    if num.odd?
-      if arr[i + 1] != nil && arr[i + 1].odd?
+    if num.to_i.odd? && arr[i + 1].to_i.odd?
         answer << "-"
-      end
     end
   end
 

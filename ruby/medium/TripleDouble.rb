@@ -4,7 +4,7 @@
 #
 # For example: if num1 equals 451999277 and num2 equals 41177722899,
 # then return 1 because in the first parameter
-# you have the straight triple 99# and you have a straight double, 99,
+# you have the straight triple 999 and you have a straight double, 99,
 # of the same number in the second parameter.
 #
 # If this isn't the case, return 0.

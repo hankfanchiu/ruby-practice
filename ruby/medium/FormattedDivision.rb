@@ -26,3 +26,24 @@ def FormattedDivision(num1, num2)
   return answer.join.reverse
 end
 
+
+def FormattedDivision_2(num1, num2)
+
+  quotient = num1 / num2.to_f
+  quotient = sprintf("%.4f", quotient)
+
+  i = quotient.length - 8
+  while i > 0
+    quotient.insert(i, ",")
+
+    i -= 3
+  end
+
+  return quotient
+end
+
+
+# Test cases:
+puts FormattedDivision(123456789, 10000)
+
+puts FormattedDivision_2(123456789, 10000)

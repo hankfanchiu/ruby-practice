@@ -6,9 +6,11 @@
 # because two numbers need to be added to the array (5 and 7)
 # to make it a consecutive array of numbers from 4 to 8.
 #
-# Negative numbers may be entered as parameters and no array will have less than 2 elements.
+# Negative numbers may be entered as parameters
+# and no array will have less than 2 elements.
 
-# Brute-force, ineffecient method that does not take into account of the range of the number array:
+# Brute-force, ineffecient method
+# that does not take into account the range of the number array:
 def Consecutive(arr)
 
   counter = 0

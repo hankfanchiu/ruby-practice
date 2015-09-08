@@ -66,4 +66,4 @@ def times_to_minutes(str)
 end
 
 puts MostFreeTime(["12:15PM-02:00PM","09:00AM-12:11PM","02:02PM-04:00PM"])
-# => 00:04
+#=> 00:04

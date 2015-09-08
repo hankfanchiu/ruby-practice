@@ -23,7 +23,7 @@ def SimpleSymbols_2(str)
 
   i = 0
   while i < str.length
-    if str[i] =~ /[:alpha:]/
+    if str[i] =~ /[[:alpha:]]/
       if str[i - 1] != "+" or str[i + 1] != "+"
         return false
       end

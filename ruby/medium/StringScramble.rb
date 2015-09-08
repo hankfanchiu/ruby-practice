@@ -16,9 +16,13 @@ def StringScramble(str1,str2)
       return false
     end
 
-    puts "letter: #{letter}"
     arr1.slice!(arr1.index(letter))
   end
 
   return true
 end
+
+
+# Test cases:
+puts StringScramble("rkqodlw", "world")
+puts StringScramble("hankfanchiuisawesome", "jason")

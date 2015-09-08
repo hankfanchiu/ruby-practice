@@ -29,6 +29,6 @@ def LookSaySequence(num)
   return answer.join.to_i
 end
 
-puts LookSaySequence(1211)
-# => 111221
+puts LookSaySequence(1211) #=> 111221
+puts LookSaySequence(123333) #=> 111243
 
