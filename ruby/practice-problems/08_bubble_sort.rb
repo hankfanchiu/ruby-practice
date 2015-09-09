@@ -5,6 +5,21 @@
 # Difficulty: 3/5
 
 def bubble_sort(arr)
+
+  j = arr.count - 1
+  while j > 0
+    i = 0
+    while i < j
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i + 1] = arr[i + 1], arr[i]
+      end
+
+      i += 1
+    end
+    j -= 1
+  end
+
+  return arr
 end
 
 
