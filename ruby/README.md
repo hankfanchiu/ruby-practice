@@ -1,7 +1,10 @@
 # Ruby
 
-The majority of the files under the Ruby directory are of prep-work exercises
-provided by App Academy.
+The files under the Ruby/practice-problems directory are of prep-work
+exercises provided by App Academy.
+
+The rest of the exercises are from various sources including mock
+technical interviews.
 
 There are also notes that I took when learning about Ruby Gotchas:
 
