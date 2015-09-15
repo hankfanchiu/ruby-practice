@@ -1,9 +1,5 @@
-# Define a function that takes an array and an integer as the inputs,
-# and outputs all possible permutations with the integer input
-# as the number of elements in each permutation.
-#
-# For example, given [1, 2, 3] and 2 as the inputs,
-# the output should be: [1, 2], [1, 3], [2, 1], [2, 3].
+# Define a function that takes an integer as the inputs,
+# and outputs all possible permutations.
 
 # Recursive function:
 def permute(arr)
