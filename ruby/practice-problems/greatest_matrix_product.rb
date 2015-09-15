@@ -42,7 +42,6 @@ def greatest_product_2(arr)
   arr.each do |subarray|
     subarray.each_cons(2) do |consecutives|
       product = consecutives.inject(:*)
-
       greatest = product if product > greatest
     end
   end
@@ -70,4 +69,4 @@ def greatest_product_2(arr)
   greatest
 end
 
-puts greatest_product_2([[1,3,1], [5,1,1], [1,1,0], [0,0,2]])
+puts greatest_product_2([[1,3,1], [5,1,1], [1,1,0], [0,0,2]]) == 15
