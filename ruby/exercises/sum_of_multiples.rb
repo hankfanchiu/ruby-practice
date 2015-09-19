@@ -5,9 +5,14 @@
 
 def sum_of_multiples(num)
 
-  result = (1..num - 1).select do |number|
-    (number % 3 == 0) or (number % 5 == 0)
+  sum = 0
+  (1..num - 1).each do |number|
+    if (number % 3 == 0) or (number % 5 == 0)
+      sum += number
+    end
   end
 
-  result.inject(:+)
+  sum
 end
+
+puts sum_of_multiples(1000)
