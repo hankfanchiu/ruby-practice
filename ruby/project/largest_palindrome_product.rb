@@ -11,14 +11,18 @@ def largest_palindrome_product(num)
   max = ('9' * num).to_i
 
   largest = 0
-  (min..max).each do |number1|
-    (min..max).each do |number2|
-      product = number1 * number2
+  a = max
+  while a >= min
+    b = max
+    while b >= a
+      product = a * b
+      break if product < largest
+      largest = product if palindrome?(product)
 
-      if palindrome?(product) and product > largest
-        largest = product
-      end
+      b -= 1
     end
+
+    a -= 1
   end
 
   largest
