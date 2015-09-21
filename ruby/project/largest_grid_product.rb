@@ -65,7 +65,7 @@ def largest_grid_product(grid, adj)
       # Diagonally backward (- increment):
       product = 1
       if index - adj >= 0
-        (0..(adj - 1)).to_a.reverse.each do |i|
+        for i in 0..(adj - 1)
           product *= rows[i][index - i]
         end
         max = product if product > max
