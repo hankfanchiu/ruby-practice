@@ -20,7 +20,7 @@ puts squares_sum_sum_squares(100)
 
 
 # More efficient method (constant time O(1)):
-def squares_sum_2(num)
+def sum_square_diff(num)
 
   sum = num * (num + 1) / 2
   squared = (num * (num + 1) * (2 * num + 1)) / 6
@@ -29,5 +29,5 @@ def squares_sum_2(num)
 end
 
 
-puts squares_sum_2(10) == 2640
-puts squares_sum_2(100)
+puts sum_square_diff(10) == 2640
+puts sum_square_diff(100)
