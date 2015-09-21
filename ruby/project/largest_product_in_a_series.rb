@@ -1,28 +1,3 @@
-# Given a large integer (num) and a number of digits (digits)
-# find the greatest product of the number of adjacent digits.
-#
-# Assume that none of the digits in the input number is a zero.
-
-def max_product(num, digits)
-
-  integers = num.to_s.split('').map(&:to_i)
-  product = integers[0, digits].inject(:*)
-  max = product
-
-  i = 0
-  while i < integers.count - digits
-    product /= integers[i]
-    product *= integers[i + digits]
-
-    max = product if product > max
-
-    i += 1
-  end
-
-  max
-end
-
-
 # The four adjacent digits in the 1000-digit number
 # that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
@@ -54,7 +29,7 @@ test = test.to_i
 #
 # What is the value of this product?
 
-def adjacent_product(num, digits)
+def largest_product(num, digits)
 
   integers = num.to_s.split('').map(&:to_i)
   max = 0
@@ -70,5 +45,5 @@ def adjacent_product(num, digits)
   max
 end
 
-puts adjacent_product(test, 4) == 5832
-puts adjacent_product(test, 13)
+puts largest_product(test, 4) == 5832
+puts largest_product(test, 13)
