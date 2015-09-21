@@ -2,34 +2,22 @@
 #
 # What is the largest prime factor of the number 600851475143 ?
 
-require 'prime'
-
 def largest_prime_factor(num)
 
   test = 2
-  while test <= num
-    if test.prime? and (num % test == 0)
-      best = test
+  while test * test <= num
+    if num % test == 0
       num /= test
+      largest = test
     else
-      test += 1
+      test == 2 ? test += 1 : test += 2
     end
   end
 
-  best
+  largest = num if num > largest
+
+  largest
 end
-
-
-# def prime?(num)
-
-#   return false if num < 2
-
-#   (2..Math.sqrt(num)).each do |i|
-#     return false if num % i == 0
-#   end
-
-#   return true
-# end
 
 
 puts largest_prime_factor(13195) == 29
