@@ -4,7 +4,6 @@ One messy repo for all Ruby exercises
 
 ### Sources
 
-* [App Academy](appacademy)
 * [Beginning Ruby](beginning_ruby)
 * [Coderbyte](coderbyte)
 * [Euler](euler)
