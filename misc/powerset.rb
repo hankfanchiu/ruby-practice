@@ -1,7 +1,7 @@
 # Write a method that returns the power set of an array input.
 #
 # Pseudo-algorithm:
-# Is the set passed empty? Done
+# Is the array passed empty? Done.
 # If not, take an element out
 #   - recursively call method on the remainder of the set
 #   - return the set composed of the Union of
@@ -13,13 +13,13 @@
 # Output = [[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]
 
 def powerset(arr)
-
   return [arr] if arr.empty?
 
-  element = arr.pop
-  recursed = powerset(arr)
+  removed_element = arr.first
+  remainder = arr.drop(1)
+  set = powerset(remainder)
 
-  return recursed + recursed.map { |subset| subset + [element] }
+  return set + set.map { |array| [removed_element] + remainder }
 end
 
 p powerset([1, 2, 3])
