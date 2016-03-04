@@ -3,23 +3,18 @@
 
 # Recursive function:
 def permute(arr)
+  return [arr] if arr.empty?
 
-  # Simply returning "arr" would return only the element of the array,
-  # therefore be sure to return the element in an array data structure.
-  return [arr] if arr.count < 2
+  permutations = []
 
-  results = []
-  arr.each do |element|
-    remaining = arr.dup
-    remaining.delete_at(arr.index(element))
+  0.upto(arr.length - 1) do |idx|
+    removed = arr[idx]
+    remaining = arr.take(idx) + arr.drop(idx + 1)
 
-    permute(remaining).each do |rearranged|
-      rearranged.unshift(element)
-      results << rearranged
-    end
+    permute(remaining).each { |sub| permutations << [removed] + sub }
   end
 
-  return results
+  permutations
 end
 
 # Test cases:
