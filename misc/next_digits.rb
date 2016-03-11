@@ -8,9 +8,10 @@
 # Output = [8, 9, 0, 21, 22]
 
 def next_digits(x, y)
+  next_digits = (x..y).map do |integer|
+    digits = integer.to_s.split
 
-  result = (x..y).map do |integer|
-    arr = integer.to_s.split('').map do |digit|
+    one_plus_digits = digits.map do |digit|
       if digit.to_i < 9
         (digit.to_i + 1).to_s
       elsif digit.to_i == 9
@@ -18,10 +19,10 @@ def next_digits(x, y)
       end
     end
 
-    arr.join.to_i
+    one_plus_digits.join.to_i
   end
 
-  result
+  next_digits
 end
 
 

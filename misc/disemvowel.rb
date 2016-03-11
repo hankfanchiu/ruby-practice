@@ -1,15 +1,22 @@
 # Write a function disemvowel(string), which takes in a string,
 # and returns that string with all the vowels removed.
+#
 # Treat "y" as a consonant.
 
 def disemvowel(string)
+  disemvoweled = ""
 
-  answer = []
   string.each_char do |char|
-    answer << char unless char.downcase =~ /[aeiou]/
+    next if vowel?(char)
+
+    disemvoweled << char
   end
 
-  return answer.join
+  disemvoweled
+end
+
+def vowel?(letter)
+  letter =~ /[aeiouAEIOU]/
 end
 
 # Test cases

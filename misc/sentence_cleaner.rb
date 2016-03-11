@@ -4,21 +4,24 @@
 # Replace the banned word with asterisks equal to the number of characters
 # in the banned word. Return the cleaned sentence.
 
-def sentence_cleaner(str, arr)
+def sentence_cleaner(sentence, banned_words)
+  banned_words_map = words_to_asterisks(banned_words)
+  words = sentence.split
 
-  banned = {}
-  arr.each do |word|
+  cleaned_sentence = words.map do |word|
+    banned[word.downcase] ? banned[word.downcase] : word
+  end
+
+  cleaned_sentence.join(' ')
+end
+
+def words_to_asterisks(words)
+  asterisk_map = {}
+
+  words.each do |word|
     asterisks = '*' * word.length
-    banned[word.downcase] = asterisks
+    asterisk_map[word.downcase] = asterisks
   end
 
-  answer = str.split.map do |word|
-    if banned[word.downcase]
-      banned[word.downcase]
-    else
-      word
-    end
-  end
-
-  answer.join(' ')
+  asterisk_map
 end

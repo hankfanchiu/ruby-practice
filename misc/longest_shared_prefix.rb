@@ -7,12 +7,13 @@
 # Output = 4
 
 def longest_prefix(arr)
-
   longest_shared = 0
+
   arr.sort.each_cons(2) do |pair|
     shared = 0
+
     while shared < [pair[0].length, pair[1].length].min
-      break if pair[0][shared] != pair[1][shared]
+      break unless pair[0][shared] == pair[1][shared]
 
       shared += 1
     end

@@ -2,11 +2,11 @@
 # and returns the sum of all the odd elements.
 
 def oddball_sum(numbers)
-
   sum = 0
+
   numbers.each { |x| sum += x if x.odd? }
 
-  return sum
+  sum
 end
 
 

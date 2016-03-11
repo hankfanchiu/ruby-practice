@@ -1,23 +1,31 @@
-# Given a large integer (num) and a number of digits (digits)
+# Given a large integer (`integer`) and a number of digits (`num_of_digits`)
 # find the greatest product of the number of adjacent digits.
 #
 # Assume that none of the digits in the input number is a zero.
 
-def max_product(num, digits)
+def max_product(integer, num_of_digits)
+  digits = split_to_digits(integer)
+  end_index = digits.size - num_of_digits - 1
+  max_product = digits[0...num_of_digits].inject(:*)
 
-  integers = num.to_s.split('').map(&:to_i)
-  product = integers[0, digits].inject(:*)
-  max = product
+  0.upto(end_index) do |index|
+    product /= digits[index]
+    product *= digits[index + digits]
 
-  i = 0
-  while i < integers.count - digits
-    product /= integers[i]
-    product *= integers[i + digits]
-
-    max = product if product > max
-
-    i += 1
+    max_product = product if product > max_product
   end
 
-  max
+  max_product
+end
+
+def split_to_digits(integer)
+  reversed_digits = []
+
+  while integer > 0
+    digit = integer % 10
+    reversed_digits << digit
+    integer /= 10
+  end
+
+  reversed_digits.reverse
 end

@@ -5,11 +5,10 @@
 # Output = 4
 
 def consecutive_repeats(str)
-
+  arr = str.split('')
   greatest = 1
   letter_repeat = 1
 
-  arr = str.split('')
   arr.each_with_index do |letter, i|
     if arr[i + 1] == letter
       letter_repeat += 1

@@ -8,10 +8,11 @@ def permute(arr)
   permutations = []
 
   0.upto(arr.length - 1) do |idx|
-    removed = arr[idx]
-    remaining = arr.take(idx) + arr.drop(idx + 1)
+    removed_element = arr[idx]
+    remainder = arr.take(idx) + arr.drop(idx + 1)
+    sub_permutations = permute(remainder)
 
-    permute(remaining).each { |sub| permutations << [removed] + sub }
+    sub_permutations.each { |sub| permutations << [removed_element] + sub }
   end
 
   permutations

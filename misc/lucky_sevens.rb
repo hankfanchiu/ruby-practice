@@ -2,12 +2,11 @@
 # and returns true if any three consecutive elements sum to 7.
 
 def lucky_sevens?(numbers)
-
   numbers.each_cons(3) do |nums|
     return true if nums.inject(:+) == 7
   end
 
-  return false
+  false
 end
 
 # Test cases:
