@@ -3,20 +3,12 @@
 #
 # Treat "y" as a consonant.
 
-def disemvowel(string)
+def disemvowel(str)
   disemvoweled = ""
 
-  string.each_char do |char|
-    next if vowel?(char)
-
-    disemvoweled << char
-  end
+  str.each_char { |char| disemvoweled << char unless char =~ /[aeiouAEIOU]/ }
 
   disemvoweled
-end
-
-def vowel?(letter)
-  letter =~ /[aeiouAEIOU]/
 end
 
 # Test cases

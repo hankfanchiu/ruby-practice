@@ -3,12 +3,11 @@
 # find the greatest product of two adjacent integers
 # (vertically and horizontally).
 
-def greatest_product(arr)
-
+def greatest_product(matrix)
   greatest = 0
 
   # products within subarrays
-  arr.each do |subarray|
+  matrix.each do |subarray|
     subarray.each_cons(2) do |consecutives|
       product = consecutives.inject(:*)
 
@@ -17,7 +16,7 @@ def greatest_product(arr)
   end
 
   # products across subarrays
-  arr.each_cons(2) do |subarrays|
+  matrix.each_cons(2) do |subarrays|
     subarrays[0].each_with_index do |integer, idx|
       product = integer * subarrays[1][idx]
 
@@ -34,12 +33,11 @@ puts greatest_product([[1,1,1], [1,1,1], [1,1,0], [0,0,2]]) == 1
 # Modify the above method to also calculate the products of diagonally
 # adjacent integers
 
-def greatest_product_2(arr)
-
+def greatest_product_2(matrix)
   greatest = 0
 
   # products within subarrays
-  arr.each do |subarray|
+  matrix.each do |subarray|
     subarray.each_cons(2) do |consecutives|
       product = consecutives.inject(:*)
       greatest = product if product > greatest
@@ -47,7 +45,7 @@ def greatest_product_2(arr)
   end
 
   # products across subarrays
-  arr.each_cons(2) do |subarrays|
+  matrix.each_cons(2) do |subarrays|
     subarrays[0].each_with_index do |integer, idx|
       # vertical:
       product = integer * subarrays[1][idx]

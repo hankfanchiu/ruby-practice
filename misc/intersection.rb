@@ -8,25 +8,21 @@
 # The method should be case-insensitive.
 
 def intersection(str1, str2)
+  char_frequency = Hash.new(0)
+  intersection = []
 
-  hsh = {}
-  str1.downcase.each_char do |char1|
-    if hsh[char1]
-      hsh[char1] += 1
-    else
-      hsh[char1] = 1
-    end
+  str1.each_char { |char1| char_frequency[char1.downcase] += 1 }
+
+  str2.each_char do |char2|
+    downcased_char2 = char.downcase
+
+    next unless char_frequency[downcased_char2] > 0
+
+    intersection << downcased_char2
+    char_frequency[downcased_char2] -= 1
   end
 
-  answer = []
-  str2.downcase.each_char do |char2|
-    if hsh[char2] && hsh[char2] > 0
-      answer << char2
-      hsh[char2] -= 1
-    end
-  end
-
-  return answer
+  intersection
 end
 
 puts intersection("Here is a string", "here!") == ["h", "e", "r", "e"]

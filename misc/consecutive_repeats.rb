@@ -4,13 +4,12 @@
 # Example: str = 'abacdkabdkjdkaaaabbbb'
 # Output = 4
 
-def consecutive_repeats(str)
-  arr = str.split('')
+def consecutive_repeats(string)
   greatest = 1
   letter_repeat = 1
 
-  arr.each_with_index do |letter, i|
-    if arr[i + 1] == letter
+  string.each_with_index do |letter, index|
+    if string[index + 1] == letter
       letter_repeat += 1
     else
       letter_repeat = 1

@@ -6,14 +6,18 @@
 #
 # Output = 4
 
-def longest_prefix(arr)
+def longest_prefix(words)
+  sorted_words = words.sort
   longest_shared = 0
 
-  arr.sort.each_cons(2) do |pair|
+  sorted_words.each_cons(2) do |pair|
     shared = 0
+    first_word = pair.first
+    second_word = pair.last
+    shorter_length = [first_word.length, second_word.length].min
 
-    while shared < [pair[0].length, pair[1].length].min
-      break unless pair[0][shared] == pair[1][shared]
+    while shared < shorter_length
+      break unless first_word[shared] == second_word[shared]
 
       shared += 1
     end

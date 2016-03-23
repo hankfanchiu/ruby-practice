@@ -17,9 +17,9 @@ def powerset(arr)
 
   removed_element = arr.first
   remainder = arr.drop(1)
-  set = powerset(remainder)
+  subset = powerset(remainder)
 
-  return set + set.map { |array| [removed_element] + remainder }
+  subset + subset.map { |subset| [removed_element] + subset }
 end
 
 p powerset([1, 2, 3])
