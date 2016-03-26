@@ -17,15 +17,14 @@
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 
 def longest_collatz(limit)
-
-  answer = 0
+  longest_collatz = 0
   longest_chain = 0
-
   number = 2
+
   while number < limit
     sequence_length = 1
-
     sequence_number = number
+
     while sequence_number > 1
       if sequence_number.even?
         sequence_number = sequence_number / 2
@@ -38,13 +37,13 @@ def longest_collatz(limit)
 
     if sequence_length > longest_chain
       longest_chain = sequence_length
-      answer = number
+      longest_collatz = number
     end
 
     number += 1
   end
 
-  answer
+  longest_collatz
 end
 
 puts longest_collatz(10)

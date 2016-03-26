@@ -6,10 +6,10 @@
 require 'prime'
 
 def prime_number(num)
-
   # 2 is a known prime:
   count = 1
   test = 1
+
   until count == num
     # All primes except 2 are odd, so increment by 2:
     test += 2

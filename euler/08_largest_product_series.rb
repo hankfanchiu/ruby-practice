@@ -30,19 +30,18 @@ test = test.to_i
 # What is the value of this product?
 
 def largest_product(num, digits)
-
   integers = num.to_s.split('').map(&:to_i)
-  max = 0
-
+  largest_product = 0
   i = 0
+
   while i < integers.count - digits
     product = integers[i, digits].inject(:*)
-    max = product if product > max
+    largest_product = product if product > largest_product
 
     i += 1
   end
 
-  max
+  largest_product
 end
 
 puts largest_product(test, 4) == 5832

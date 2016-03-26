@@ -4,17 +4,17 @@
 
 require 'prime'
 
-def prime_summation(num)
+def prime_summation(limit)
+  prime_sum = 2
+  num = 3
 
-  sum = 2
-  n = 3
-  while n < num
-    sum += n if n.prime?
+  while num < limit
+    prime_sum += num if num.prime?
 
-    n += 2
+    num += 2
   end
 
-  sum
+  prime_sum
 end
 
 
@@ -28,36 +28,39 @@ def prime_summation_2(limit)
   sieve = (0..limit).map { |element| element = false }
 
   # Mark all even indices beginning with 4 as true:
-  evens = 4
-  while evens <= limit
-    sieve[evens] = true
-    evens += 2
+  even_index = 4
+
+  while even_index <= limit
+    sieve[even_index] = true
+    even_index += 2
   end
 
   # Mark all multiples, beginning with index 3, as true:
-  n = 3
-  while n < Math.sqrt(limit)
-    if not sieve[n]
-      m = n * n
-      while m < limit
-        sieve[m] = true
+  num = 3
+  limit_square_root = Math.sqrt(limit)
+
+  while num < limit_square_root
+    unless sieve[num]
+      square = num * num
+
+      while square < limit
+        sieve[square] = true
 
         # Odd numbers only:
-        m += (n * 2)
+        square += (num * 2)
       end
     end
 
     # Odd numbers only:
-    n += 2
+    num += 2
   end
+
+  prime_sum = 0
 
   # Sum the indices of true elements (primes):
-  sum = 0
-  for p in 2..limit
-    sum += p if not sieve[p]
-  end
+  2.upto(limit) { |element| prime_sum += element unless sieve[element] }
 
-  sum
+  prime_sum
 end
 
 

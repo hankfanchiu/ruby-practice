@@ -9,14 +9,17 @@
 # find the sum of the even-valued terms.
 
 def even_fibonacci_sum(num)
-
-  n1 = 1
-  n2 = 2
-
+  two_before = 1
+  one_before = 2
   sum = 0
-  while n2 <= num
-    sum += n2 if n2.even?
-    n1, n2 = n2, (n2 + n1)
+
+  while one_before <= num
+    sum += one_before if one_before.even?
+
+    new_one_before = one_before + two_before
+
+    two_before = one_before
+    one_before = new_one_before
   end
 
   sum

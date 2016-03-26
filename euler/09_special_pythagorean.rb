@@ -7,17 +7,20 @@
 # Find the product abc.
 
 def special_pythagorean(num)
+  half = num / 2
 
   # For every Pythagorean triplet a >= 3
-  for a in 3..(num / 2)
-    # b > a
-    for b in (a + 1)..(num / 2)
-      c = num - (a + b)
-      if (c ** 2) == (a ** 2) + (b ** 2)
-        return a * b * c
-      end
+  3.upto(half) do |a|
+    (a + 1).upto(half) do |b|
+      c = num - a - b
+
+      return (a * b * c) if pythagorean?(a, b, c)
     end
   end
+end
+
+def pythagorean?(a, b, c)
+  (c ** 2) == (a ** 2) + (b ** 2)
 end
 
 puts special_pythagorean(1000)

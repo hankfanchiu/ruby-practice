@@ -18,19 +18,20 @@
 # What is the value of the first triangle number
 # to have over five hundred divisors?
 
+require 'prime'
+
 # Brute force with trial division (slow):
 def divisible_triangular(num)
-
   triangular = 1
   increment = 1
-
   count = 0
+
   while count <= num
     count = 0
     increment += 1
     triangular += increment
-
     n = 1
+
     while n <= Math.sqrt(triangular)
       count += 2 if triangular % n == 0
       n += 1
@@ -59,15 +60,13 @@ puts divisible_triangular(5) == 28
 #
 # 'an' being the exponents of the distinct prime numbers which are factors of N.
 
-
 # Optimized given an array of primes up to 65500:
 def divisible_triangular_2(num)
-
   primes = prime_arr(65500)
   triangular = 1
   increment = 1
-
   count = 0
+
   while count < num
     count = 1
     increment += 1
@@ -81,12 +80,14 @@ def divisible_triangular_2(num)
       end
 
       exponent = 1
+
       while triangular_dup % prime == 0
         triangular_dup /= prime
         exponent += 1
       end
 
       count *= exponent
+
       break if triangular_dup == 1
     end
   end
@@ -94,23 +95,17 @@ def divisible_triangular_2(num)
   triangular
 end
 
-require 'prime'
-
 def prime_arr(num)
-
-  # 2 is a known prime:
-  primes = [2]
-
+  prime_arr = [2]
   test = 1
+
   while test <= num
-    # All primes except 2 are odd, so increment by 2:
     test += 2
-    primes << test if test.prime?
+    prime_arr << test if test.prime?
   end
 
-  primes
+  prime_arr
 end
-
 
 puts divisible_triangular_2(6) == 28
 puts divisible_triangular_2(500)

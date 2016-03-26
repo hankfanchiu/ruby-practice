@@ -102,14 +102,15 @@ input = '37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690'
 
 
-def large_sum(input)
+def large_sum(number_string)
+  large_sum = 0
+  number_lines = number_string.split(/\n/)
 
-  sum = 0
-  input.split(/\n/).each do |number|
-    sum += number.to_i
-  end
+  number_lines.each { |number_line| large_sum += number_line.to_i }
 
-  sum.to_s[0, 10]
+  large_sum_string = large_sum.to_s
+
+  large_sum_string[0, 10]
 end
 
 

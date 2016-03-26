@@ -4,34 +4,21 @@
 # What is the smallest positive number that is evenly divisible
 # by all of the numbers from 1 to 20?
 
-# Rubyist:
 def smallest_multiple(num1, num2)
+  (num1..num2).inject do |smallest_multiple, num|
+    gcf = greatest_common_factor(smallest_multiple, num)
 
-  (num1..num2).reduce(:lcm)
+    (smallest_multiple * num).abs / gcf
+  end
 end
 
-
-puts smallest_multiple(1, 10) == 2520
-puts smallest_multiple(1, 20)
-
-
-# Maths:
-def gcf(num1, num2)
-
-  until num2 == 0
-    num1, num2 = num2, (num1 % num2)
+def greatest_common_factor(num1, num2)
+  until num2.zero?
+    num1, num2 = num2, num1 % num2
   end
 
   num1.abs
 end
 
-def lcm(num1, num2)
-
-  (num1..num2).inject do |lcm, n|
-    (lcm * n).abs / gcf(lcm, n)
-  end
-end
-
-
-puts lcm(1, 10) == 2520
-puts lcm(1, 20)
+puts smallest_multiple(1, 10) == 2520
+puts smallest_multiple(1, 20)
